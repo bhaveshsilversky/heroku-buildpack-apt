@@ -124,3 +124,20 @@ cat <<EOF >$BUILD_DIR/checktest.ini
 text input are to check
 EOF
 
+mkdir -p $BUILD_DIR/odbcinst.ini
+cat <<EOT > $BUILD_DIR/odbcinst.ini/odbcinst.ini
+[CData ODBC Driver for Salesforce]
+Description=CData ODBC Driver for Salesforce 2018
+Driver=/app/.apt/opt/cdata/cdata-odbc-driver-for-salesforce/lib/libsalesforceodbc.x86.so
+UsageCount=1
+Driver64=/app/.apt/opt/cdata/cdata-odbc-driver-for-salesforce/lib/libsalesforceodbc.x64.so
+EOT
+
+cat <<EOT > $BUILD_DIR/odbcinst.ini/odbc.ini
+[CData Salesforce Source]
+Driver=CData ODBC Driver for Salesforce
+Password=new@1235
+Security Token=YOZN5cfLuQ0EYyEBiAST2WBu
+User=nilesh.silversky@gmail.com.sandbox
+Use Sandbox=true
+EOT
