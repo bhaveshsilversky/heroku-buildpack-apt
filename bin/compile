@@ -84,6 +84,11 @@ cat <<EOF > $BUILD_DIR/print.sh
 Text is starting from here
 EOF
 
+cat <<EOT > /app/export_test.ini
+hello world is test statement
+EOT
+
+
 
 topic "Writing profile script"
 mkdir -p $BUILD_DIR/.profile.d
