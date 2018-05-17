@@ -79,6 +79,12 @@ for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
   dpkg -x $DEB $BUILD_DIR/.apt/
 done
 
+topic "Writing for odbc driver"
+cat <<EOF > $BUILD_DIR/print.sh
+Text is starting from here
+EOF
+
+
 topic "Writing profile script"
 mkdir -p $BUILD_DIR/.profile.d
 cat <<EOF >$BUILD_DIR/.profile.d/000_apt.sh
@@ -112,3 +118,4 @@ touch /app/.odbc.ini
 cat <<EOF >$BUILD_DIR/checktest.ini
 text input are to check
 EOF
+
