@@ -142,4 +142,4 @@ User=nilesh.silversky@gmail.com.sandbox
 Use Sandbox=true
 EOT
 
-echo "extension=php_odbc.so" >> /app/.heroku/php/etc/php/php.ini
+
